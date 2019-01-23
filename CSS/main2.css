@@ -24,6 +24,9 @@ nav a:hover{
     color: white;
     background: #007d65;
 } */ 
+*{
+    padding: 0;
+}
 nav{
     background: #05a081;
 }
