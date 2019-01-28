@@ -73,7 +73,7 @@ main{
     background-color: var(--main-color);
     padding: 0.5em 1em;
     border-radius: 4px;
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 footer{
     width:100%;
