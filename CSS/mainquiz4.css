@@ -1,0 +1,163 @@
+
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+:root{
+    --main-color:#05a081;
+    --text-color:#fff;
+    --bg-1:#eee;
+    --bg-2:#333;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Raleway';
+    font-size: 20px !important;
+}
+header{
+    width: 100%;
+    position:absolute; /*fixed;*/
+    z-index: 5;
+}
+header nav{
+    background: transparent !important;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0!important;
+    display: flex;
+    text-align: center;
+}
+nav ul li{
+    justify-self: center;
+    align-self: center;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: var(--text-color);
+    text-align:  center;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+a:hover{
+    text-decoration: none !important;
+    color: var(--text-color);
+}
+.banner{
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+main{
+    padding: 4em 0;
+    background-color: var(--background-color);
+}
+.container{
+    display: grid;
+    grid-template-columns: 100fr 100fr 100fr;
+    grid-template-rows: auto;
+     grid-template-areas: 
+    "midleft midright midright"
+    "midleft midright midright"
+    "box1 box2 box3"
+    ". footer .";
+}
+.footer{
+    grid-area: footer;
+    align-content: center;
+}
+.floatleft{
+    padding: 2em;
+    grid-area: midleft;
+}
+.floatright{
+    padding: 2em;
+    grid-area: midright;
+}
+.box{
+    text-align: center;
+    float: left;
+    padding: .5em 0;
+    margin: .5em;
+}
+.box1{
+    grid-area: box1;
+}
+.box2{
+    grid-area: box2;
+}
+.box3{
+    grid-area: box3;
+}
+.bg-color{
+    color:var(--text-color);
+    background-color: var(--bg-2);
+    overflow: hidden;
+}
+.fas{
+    font-size: 3em;
+    padding: 0.5em;
+}
+.button{
+    background-color: var(--main-color);
+    color:var(--text-color);
+    padding: 0.5em 1em;
+    border-radius: 4px;   
+}
+
+footer{
+    width: 100%;
+    padding: 2.6em;
+    text-align: center;
+}
+.label, #toggle{
+    display: none;
+}
+.icon:checked+.menu{
+    display: none;
+}
+@media(max-width:700px){
+
+    .floatleft{
+        float:none;
+        width: 100vh;
+    }
+    .floatright{
+        float:none;
+        width:100%;
+    }
+    nav{
+        margin: auto;
+        width:100%;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        margin: 0;
+        position: absolute;
+        top: 2.4em;
+    }
+    .icon:checked+.menu{
+        display: block;
+    
+    }
+    .fas{
+        font-size: 26px;
+        color: var(--text-color);
+        float: right;
+        width: 30px;
+        padding: 0;
+    }
+    .label{
+        display: block;
+        cursor: pointer;
+    }
+}
